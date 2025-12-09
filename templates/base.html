@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<title>
+    {% block title %}{% endblock %} - MyBlog
+</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+    <h1>MyBlog</h1>
+    <ul>
+        <li><a href="{{ url_for('users.register') }}">Register</a></li>
+    </ul>
+</nav>
+<section>
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+    {% for message in get_flashed_messages() %}
+        <div>{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Users{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <p>{{ user.get_username() }}</p>
+    <p>{{ user.get_email() }}</p>
+{% endblock %}             
+            
+        
+    
